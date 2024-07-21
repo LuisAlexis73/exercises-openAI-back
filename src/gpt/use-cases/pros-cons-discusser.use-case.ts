@@ -28,5 +28,5 @@ export const prosConsDiscusserUseCase = async (
     max_tokens: 500,
   });
 
-  return response.choices[0].message.content;
+  return response.choices[0].message;
 };
