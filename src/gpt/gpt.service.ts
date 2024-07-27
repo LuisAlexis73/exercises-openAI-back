@@ -3,8 +3,9 @@ import {
   orthographyCheckUseCase,
   prosConsDiscusserStreamUseCase,
   prosConsDiscusserUseCase,
+  translateTextUseCase,
 } from './use-cases';
-import { OrthographyDto, ProsConsDiscusserDto } from './dtos';
+import { OrthographyDto, ProsConsDiscusserDto, TranslateDto } from './dtos';
 import OpenAI from 'openai';
 
 @Injectable()
@@ -28,6 +29,13 @@ export class GptService {
   async prosConsDiscusserStream(prosConsDiscusserDto: ProsConsDiscusserDto) {
     return await prosConsDiscusserStreamUseCase(this.openai, {
       prompt: prosConsDiscusserDto.prompt,
+    });
+  }
+
+  async translateText({ prompt, lang }: TranslateDto) {
+    return await translateTextUseCase(this.openai, {
+      prompt,
+      lang,
     });
   }
 }
