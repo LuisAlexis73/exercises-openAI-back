@@ -9,8 +9,7 @@ export const translateTextUseCase = async (
   openai: OpenAI,
   { prompt, lang }: Options,
 ) => {
-  return await openai.chat.completions.create({
-    stream: true,
+  const response = await openai.chat.completions.create({
     messages: [
       {
         role: 'system',
@@ -22,5 +21,5 @@ export const translateTextUseCase = async (
     // max_tokens: 500,
   });
 
-  // return { message: response.choices[0].message.content };
+  return { message: response.choices[0].message.content };
 };
