@@ -12,7 +12,5 @@ export const createRunUseCase = async (openai: OpenAI, options: Options) => {
     assistant_id: assistantId,
   });
 
-  console.log(run);
-
   return run;
 };
