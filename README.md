@@ -1,73 +1,54 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# exercises-openAI-back
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Descripción
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Este repositorio es un proyecto práctico construido con [NestJS](https://nestjs.com/), que tiene como objetivo explorar y practicar el consumo de la API de OpenAI a través de la construcción de una API RESTful. Aquí aprenderás tanto el funcionamiento de la API de OpenAI como el desarrollo backend moderno usando NestJS.
 
-## Description
+El proyecto incluye varios módulos y servicios que permiten interactuar con diferentes capacidades de OpenAI, como chat, corrección ortográfica, traducción, pros y contras, síntesis de voz y transcripción de audio, todo mediante endpoints diseñados para distintos casos de uso.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### Características principales
 
-## Installation
+- **Consumo de la API de OpenAI:** El proyecto implementa varios casos de uso (use cases) donde se realizan peticiones a OpenAI utilizando su SDK oficial. Esto incluye la generación de texto, corrección ortográfica, traducción, discusión de pros y contras, síntesis de voz y transcripción de audio.
+- **Arquitectura modular con NestJS:** La API está dividida en módulos y servicios siguiendo buenas prácticas de NestJS, lo que facilita la escalabilidad y el mantenimiento.
+- **Práctica de integración real:** Ideal para quienes desean aprender cómo integrar servicios de IA como OpenAI en aplicaciones Node.js/NestJS.
 
+## Instalación
+
+Instala las dependencias del proyecto:
 ```bash
-$ npm install
+npm install
 ```
 
-## Running the app
+## Variables de entorno
 
+Debes agregar la variable `OPENAI_API_KEY` en tu entorno para autenticarte con la API de OpenAI.
+
+## Ejecución de la aplicación
+
+Ejecuta el proyecto en modo desarrollo:
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm run start:dev
 ```
 
-## Test
 
-```bash
-# unit tests
-$ npm run test
+## Estructura del proyecto
 
-# e2e tests
-$ npm run test:e2e
+- `src/gpt/`: Servicios relacionados con procesamiento de texto, audio, traducción y más usando OpenAI.
+- `src/mentor-assistant/`: Implementa un asistente tipo "mentor" que utiliza hilos y mensajes gestionados por OpenAI.
+- `src/app.module.ts`: Configuración principal del módulo de NestJS.
 
-# test coverage
-$ npm run test:cov
-```
+## Ejemplos de Endpoints y Funcionalidades
 
-## Support
+- **Corrección ortográfica:** Envía textos en español y recibe correcciones con un score, usando el modelo de OpenAI.
+- **Pros y contras:** Envía una pregunta y recibe una respuesta en markdown con listas de pros y contras.
+- **Traducción de textos:** Traduce textos a distintos idiomas utilizando los modelos de OpenAI.
+- **Texto a audio:** Convierte texto en audios MP3 usando las voces de OpenAI.
+- **Transcripción de audio:** Convierte audios en texto utilizando modelos de OpenAI.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Práctica y aprendizaje
 
-## Stay in touch
+Este repositorio está pensado para quienes quieren aprender sobre:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- El uso efectivo de la API de OpenAI en proyectos reales.
+- Cómo construir APIs robustas y escalables con NestJS.
+- Buenas prácticas de arquitectura y desarrollo backend.
